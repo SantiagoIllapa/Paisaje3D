@@ -19,7 +19,7 @@ AnimatorStateTransition:
   m_ExitTime: 0.75
   m_HasExitTime: 1
   m_HasFixedDuration: 1
-  m_InterruptionSource: 0
+  m_InterruptionSource: 2
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
 --- !u!206 &-4414178281259757629
@@ -62,7 +62,7 @@ AnimatorState:
   m_PrefabAsset: {fileID: 0}
   m_Name: Aterrizar
   m_Speed: 1
-  m_CycleOffset: 0
+  m_CycleOffset: 1
   m_Transitions:
   - {fileID: -6937936786291322724}
   m_StateMachineBehaviours: []
@@ -77,9 +77,9 @@ AnimatorState:
   m_Motion: {fileID: 7400004, guid: 60bdeb81b9602b341b9498fd4431f777, type: 3}
   m_Tag: 
   m_SpeedParameter: 
-  m_MirrorParameter: 
+  m_MirrorParameter: inFloor
   m_CycleOffsetParameter: 
-  m_TimeParameter: 
+  m_TimeParameter: velX
 --- !u!1101 &-1991173945957501404
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -102,7 +102,7 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1101 &-175389543787003532
+--- !u!1101 &-1804953181951496286
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,7 +112,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: fuerzaSalto
-    m_EventTreshold: 0
+    m_EventTreshold: -0.1
   - m_ConditionMode: 2
     m_ConditionEvent: inFloor
     m_EventTreshold: 0
@@ -125,7 +125,7 @@ AnimatorStateTransition:
   m_TransitionDuration: 0.25
   m_TransitionOffset: 0
   m_ExitTime: 0.75
-  m_HasExitTime: 0
+  m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -200,7 +200,7 @@ AnimatorStateMachine:
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 8990036309058342368}
-  - {fileID: -175389543787003532}
+  - {fileID: -1804953181951496286}
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
@@ -236,32 +236,7 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1101 &4695844771272356673
-AnimatorStateTransition:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: inFloor
-    m_EventTreshold: 0
-  m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: -3625424436116151611}
-  m_Solo: 0
-  m_Mute: 0
-  m_IsExit: 0
-  serializedVersion: 3
-  m_TransitionDuration: 0.25
-  m_TransitionOffset: 0
-  m_ExitTime: 0.75
-  m_HasExitTime: 1
-  m_HasFixedDuration: 1
-  m_InterruptionSource: 0
-  m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
---- !u!1101 &5980368860348206304
+--- !u!1101 &8092689936537926792
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -270,7 +245,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions: []
   m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 8726919489190192983}
+  m_DstState: {fileID: -3625424436116151611}
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0
@@ -293,8 +268,7 @@ AnimatorState:
   m_Name: Salto
   m_Speed: 1
   m_CycleOffset: 0
-  m_Transitions:
-  - {fileID: 5980368860348206304}
+  m_Transitions: []
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -321,7 +295,7 @@ AnimatorState:
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
-  - {fileID: 4695844771272356673}
+  - {fileID: 8092689936537926792}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -347,7 +321,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 3
     m_ConditionEvent: fuerzaSalto
-    m_EventTreshold: 1
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8360713564278312413}
   m_Solo: 0
